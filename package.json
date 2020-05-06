@@ -23,7 +23,7 @@
     "pm2": "^3.5.1"
   },
   "devDependencies": {
-    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
     "nodemon": "^2.0.3"
   },
   "engines": {

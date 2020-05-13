@@ -37,7 +37,7 @@ async function updateVideo(req, res){
         }
       );
       if (!newVideo) {
-        return res.status(404).json('course not found');
+        return res.status(404).json('video not found');
       }
       return res.json(newVideo);
     

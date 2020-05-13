@@ -31,6 +31,9 @@ const video = new mongoose.Schema(
         keywords:{
             type:Array
         },
+        playlist:{
+            type: Array
+        },
         _v:{
             type:Number,
             select:false

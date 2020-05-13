@@ -24,11 +24,15 @@ const user = new mongoose.Schema(
                     }
                 },
                 
-                About:{
+            about:{
                     type:String,
                     default: "this is a bit about me.",
                     required:false
                 },
+                
+            playlist:{
+                type: Array
+            },
            
             __v:{
                 type:Number,

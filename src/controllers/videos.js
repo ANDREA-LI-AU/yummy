@@ -56,7 +56,6 @@ async function deleteVideo(req, res){
 async function belongToUser(req, res) {
     //find the userID and videoID
     const {id, videoID} = req.params; 
-
     //map videos to user
     const user = await User.findById(id);
     const video = await Video.findById(videoID);
@@ -65,21 +64,20 @@ async function belongToUser(req, res) {
     } else if ( !video ){
         return res.sendStatus(404).json('Video not found');
     } 
-    // const oldLength = user.videos.length;
+    // const oldLength = user.videos.length; 
     user.videos.addToSet(video._id);
     video.author = user.username;
     await user.save();
     await video.save();
-    return res.json( video );
-    // const newLength = user.video.length;
-    // if (newLength - oldLength){
+    // const newLength = user.video.length; 
+    // if (newLength - oldLength){ // making sure the video is successfully added
     //     await user.save();
-    //     return res.json(user);
+    //     return res.sendStatus(200); 
     // } else{
     //     return res.status(404).json('something went wrong');
     // }
     //return success/ not successful
-
+    return res.sendStatus(200);
 
 }
 

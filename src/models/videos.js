@@ -21,8 +21,9 @@ const video = new mongoose.Schema(
             default:0
         },
         author:{
-            type:String,
-            required:true
+            type:String, //cooresponds to the user model username.
+            required:true,
+            ref:'User' //one to one relation: One video only have one user.  
         },
         description:{
             type:String,

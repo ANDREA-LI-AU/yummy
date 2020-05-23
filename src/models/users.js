@@ -33,7 +33,13 @@ const user = new mongoose.Schema(
             playlist:{
                 type: Array
             },
-           
+            videos:[
+                //one to many relation: one user can upload many videos
+                {
+                    type:mongoose.Schema.Types.ObjectId,
+                    ref: 'Video' //const model = mongoose.model('Video', video);
+                }
+            ],
             __v:{
                 type:Number,
                 select:false

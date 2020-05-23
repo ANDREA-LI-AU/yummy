@@ -9,4 +9,5 @@ const videoRoute = require('./routes/videos')
 router.use('/signup', userRoute);
 router.use('/login', authRoute );
 router.use('/video', authGuard ,videoRoute );
+
 module.exports = router;

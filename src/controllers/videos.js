@@ -81,6 +81,20 @@ async function belongToUser(req, res) {
 
 }
 
+// async function searchVideoByName(req, res){
+//     const { name } = req.query;
+//     name = name.toLowerCase();
+//     const filterName = Video.filter(i => i.name.includes(name));
+//     return res.json(filterName); 
+// }
+
+// async function searchVideoByCategory(req, res){
+//     const category = req.query;
+//     category = category.toLowerCase();
+//     const filterCate = Video.filter(i => i.keywords.includes(category));
+//     return res.json(filterCate);
+// }
+
 
 module.exports = {
     addVideo, 
@@ -89,4 +103,6 @@ module.exports = {
     updateVideo,
     deleteVideo,
     belongToUser
+    // , searchVideoByName,
+    // searchVideoByCategory
 };

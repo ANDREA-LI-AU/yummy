@@ -9,7 +9,7 @@ async function addUser(req, res) {
         email
     });
     //using package express-async-error for error handling.
-    await user.hashPassword();  //ha  sh function defined in schema
+    await user.hashPassword();  //hash function defined in schema
     await user.save();
     const token = generateToken( user );
     return res.json({ username, token });

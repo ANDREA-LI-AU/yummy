@@ -7,9 +7,13 @@ const app = express();
 const{ connectToDB } = require ('./utils/db');
 const errorHandler = require('./middleware/errorHandler');
 
-app.use(express.json());
+app.use(express.json());  
+//bodyparser's package:use req.body to get json object in request body, then transfer it as an  js object.
 app.use('/yummy', routes);
 app.use(errorHandler);
+
+//global middleware: pre-process data in req-res cycle：
+//1. read chunk and cache; 2. 解析token 3. append role etc.
 
 connectToDB().then(
     () => {
